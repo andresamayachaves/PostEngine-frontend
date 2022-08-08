@@ -142,7 +142,7 @@ function hanldeEdit(comment:commentI){
     const editButton:HTMLButtonElement = document.createElement('button')
     editButton.className = 'form-edit-button'
     editButton.innerText = 'Edit';
-    editButton.addEventListener('click', () => executeEdition(comment, titleInput, reminderInput))
+    editButton.addEventListener('click', () => executeEdition(comment, titleInput.value, reminderInput))
   
     const formContainer = document.querySelector('.form-container');
     formContainer?.append(editButton)
