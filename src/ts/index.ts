@@ -1,4 +1,8 @@
-import { getAllPostsFromBacked } from "./requests/asyncRequests.js" 
+import { getAllPostsFromBacked, addNewPostToBacked, 
+    editPostToBacked, deletePostToBacked,
+    addNewCommentToBacked,  getAllCommentsFromBacked,
+    editCommentToBacked, deleteCommentToBacked
+  } from "./requests/asyncRequests.js" 
 import { commentI, postI } from "./models/models.js"
 
 console.log("Ts created")
@@ -90,13 +94,67 @@ postContainer:HTMLElement){
     postContainer.append(singleCommentContainer)
 }
 
-function CreatePostButton(){
-    
+
+function recreatePosts(posts:postI[]){
+    posts.forEach(post => createComment(post))
 }
 
 
 
-function recreatePosts(posts:postI[]){
-    posts.forEach(post => createReminder(post))
-  }
+
+
+function createComment(post: postI) {  const postsContainer = document.querySelector('.posts-container') as HTMLDivElement
+
+const div:HTMLDivElement = document.createElement('div');
+div.className = 'single-post-container'
+div.classList.add(`post-${post.id}`)
+
+const h2:HTMLHeadElement = document.createElement('h2');
+h2.className = `single-post-title-${post.id}`
+h2.innerText = post.title
+
+const commentP:HTMLParagraphElement = document.createElement('p')
+commentP.className = `single-post-comment-${post.id}`
+commentP.innerText = post.content
+
+
+const deleteButton:HTMLButtonElement = document.createElement('button')
+deleteButton.className = 'single-post-delete-button'
+deleteButton.innerText = 'X'
+deleteButton.addEventListener('click', ()=> handleDelete(div))
+
+const editButton:HTMLButtonElement = document.createElement('button')
+editButton.className = 'single-post-edit-button'
+editButton.innerText = 'edit'
+editButton.addEventListener('click', ()=> hanldeEdit(post))
+
+div.append(h2, commentP, deleteButton, editButton)
+postsContainer.append(div)
+        
+}
+
+function hanldeEdit(comment:commentI){
+    const titleInput = document.querySelector('.title-input') as HTMLInputElement;
+    const reminderInput = document.querySelector('.reminder-input') as HTMLInputElement;
+    const submitButton = document.querySelector('.reminders-form-button') as HTMLButtonElement
+    submitButton.classList.add('display_none')
   
+    const editButton:HTMLButtonElement = document.createElement('button')
+    editButton.className = 'form-edit-button'
+    editButton.innerText = 'Edit';
+    editButton.addEventListener('click', () => executeEdition(comment, titleInput, reminderInput))
+  
+    const formContainer = document.querySelector('.form-container');
+    formContainer?.append(editButton)
+    
+    reminderInput.value = comment.content;
+}
+
+function executeEdition(comment:commentI, content:string, numberOfLikes:number){  
+    const commentEdited:commentI = {
+      id:comment.id,
+      content:content,
+      numberOfLikes: numberOfLikes
+    }
+  
+}
