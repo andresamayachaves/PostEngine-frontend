@@ -1,21 +1,21 @@
 export interface postI{
-    id:number,
+    id:number|null,
     title:string,
     content:string,
     numberOfLikes: number,
     comments: commentI[]
-    userLikes: userLikesI[]
+   // userLikes: userLikesI[]
 }
 
 export interface commentI{
-    id:number,
+    id:number|null,
     content: string,
     numberOfLikes: number,
-    userLikes: userLikesI[]
+    //userLikes: userLikesI[]
 }
 
-interface userLikesI{
+/* export interface userLikesI{
     id:number,
     userNmae:string,
     dni:string
-}
+} */

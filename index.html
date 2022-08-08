@@ -1,4 +1,5 @@
-<!DOCTYPE html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,94 +11,41 @@
     <br>
     <h1> PCEngine </h1>
     <h1> Posts & Comments Engine </h1>
-    <button onclick="createSpecialtyButton()"> CREATE A NEW POST </button>
+    <button onclick="materializePosts()"> CREATE A NEW POST </button>
     <h2> _____________________________________ </h2> 
     <h2> ACTIVE POSTS</h2><br> 
     <body>
-        <div id="root">AAA</div>
-
-        <div class="main-part">
-            <div class="cpanel">
-                <div class="icon-part">
-                    <i class="num-1" aria-hidden="true">1</i><br><br><br>
-                    <small id="sp-1"> -- [Title] -- </small>    
-                    <p id="ph-1"> -- [Content] -- </p>
-                </div>
-                <div class="card-content-part">
-                    <a href="./Specialty.html">Enter </a>
-                </div>
+        <div class="main-container">
+            <div class="form-notes-container">
+              <section class="form-container">
+                <form class="comments-form" action="#">
+                  <input placeholder="title" class="title-input" type="text" />
+                  <input placeholder="comment" class="comment-input" type="text">
+                  <button class="comments-form-button">Submit</button>
+                </form>
+              </section>
+              <div class="notes-container">
+        
+              </div>
             </div>
-            <div class="cpanel cpanel-green">
-                <div class="icon-part">
-                    <i class="num" aria-hidden="true">2</i><br><br><br>
-                    <small id="sp-2"> -- [Specialty to Assign] -- </small>    
-                    <p id="ph-2"> -- [Physician to Assign] -- </p>
-                </div>
-                <div class="card-content-part">
-                    <a href="./Specialty.html">Enter </a>
-                </div>
-            </div>
-            <div class="cpanel cpanel-orange">
-                <div class="icon-part">
-                    <i class="num" aria-hidden="true">3</i><br><br><br>
-                    <small id="sp-3"> -- [Specialty to Assign] -- </small>    
-                    <p id="ph-3"> -- [Physician to Assign] -- </p>
-                </div>
-                    <div class="card-content-part">
-                    <a href="./Specialty.html">Enter </a>
-                </div>
-            </div>
-        <div class="cpanel cpanel-blue">
-        <div class="icon-part">
-        <i class="num" aria-hidden="true">4</i><br><br><br>
-        <small id="sp-4"> -- [Specialty to Assign] -- </small>    
-        <p id="ph-4"> -- [Physician to Assign] -- </p>
-        </div>
-        <div class="card-content-part">
-        <a href="./Specialty.html">Enter </a>
-        </div>
-        </div>
-        <div class="cpanel cpanel-red">
-        <div class="icon-part">
-        <i class="num" aria-hidden="true">5</i><br><br><br>
-        <small id="sp-5"> -- [Specialty to Assign] -- </small>    
-        <p id="ph-5"> -- [Physician to Assign] -- </p>
-        </div>
-        <div class="card-content-part">
-        <a href="./Specialty.html">Enter </a>
-        </div>
-        </div>
-        <div class="cpanel cpanel-skyblue">
-        <div class="icon-part">
-        <i class="num" aria-hidden="true">6</i><br><br><br>
-        <small id="sp-6"> -- [Specialty to Assign] -- </small>    
-        <p id="ph-6"> -- [Physician to Assign] -- </p>
-        </div>
-        <div class="card-content-part">
-        <a href="./Specialty.html">Enter </a>
-        </div>
-        </div>
-        </div>
+          </div>
         </body>
     
     <br><br>
-
-    <button class ="pager" onclick="backPageSpecialty()"> << </button>
-    <button class ="pager" onclick="forwardPageSpecialty()">>></button> <br>
     <h2> ___________________________________________________________________ </h2> <br><br>
-    <i id="message1"></i><br><br>
+<!--     <i id="message1"></i><br><br>
     <p id="preBox1" class="left">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 
         &emsp;&emsp;&emsp;|  Specialty: &emsp;&emsp;&nbsp;&emsp;&emsp;&nbsp;
         <input id="input-line1"  class='form-control' type="text"></input>
     </p>        
     <p id="preBox2" class="left">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 
         &emsp;&emsp;&emsp;|  Physician in charge:
-        <input id="input-line2" class='form-control' type="text"></input>
-    </p><br><br>
+        <input id="input-line2" class='form-control' type="text" />
+    </p><br><br> -->
     <button id="updateBtn" onclick="createSpecialty()"> CREATE </button>
     <button id="deleteBtn" onclick="deleteSpecialty()"> DELETE </button><br><br>
-    <i id="message2">Press 'Enter' in the available specialties to Create, Show, Update or Delete its registry of appointments.</i><br><br>
-    <i id="message3">You can create a new specialty or delete an exsiting one with the buttons above.</i><br><br><br>
-    <script defer src="src/js/PCEngine.js"></script>  
+    <i id="message2">Press 'Create a New Post', .</i><br><br>
+    <i id="message3">Also, ou can edit or delete any active post.</i><br><br><br>
+    <script defer type="module" src="./src/ts/index.ts"></script>  
 </body>
 </html>
