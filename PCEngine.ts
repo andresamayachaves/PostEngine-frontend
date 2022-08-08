@@ -1,15 +1,40 @@
-//import { commentI } from "./models/models.js"
-import { commentI, postI } from "./models/models.js"
-import { getAllPostsFromBacked } from "./requests/asyncRequests.js" 
+import { getAllPostsFromBacked } from "./src/ts/requests/asyncRequests.js" 
 
 console.log("Ts created")
 
 let posts:postI[];
 
-/*getAllPostsFromBacked().then(response =>{
+//interfaces
+
+interface postI{
+    id:number,
+    title:string,
+    content:string,
+    numberOfLikes: number,
+    comments: commentI[]
+    userLikes: userLikesI[]
+}
+
+interface commentI{
+    id:number,
+    content: string,
+    numberOfLikes: number,
+    userLikes: userLikesI[]
+}
+
+interface userLikesI{
+    id:number,
+    userNmae:string,
+    dni:string
+}
+
+
+
+
+getAllPostsFromBacked().then(response =>{
     posts = response;
     console.log(posts);
-})*/
+})
 
 function materializePosts(posts: Array<postI>){
     const divRoot = document.querySelector('#root') as HTMLDivElement
@@ -46,9 +71,7 @@ postContainer:HTMLElement){
 
     const singleCommentContent:string = `
     <h3 class="comment_content_${comment.id}"> ${comment.content}</h3>
-    <p class="comment_numeberOfLikes_${comment.id}"> ${comment.numberOfLikes}</p>
-    <p class="comment_userLikes_${comment.id}"> ${comment.userLikes}</p>
-    `
+    <p class="comment_numeberOfLikes_${comment.id}"> ${comment.numberOfLikes}</p>    `
 
     singleCommentContainer.innerHTML = singleCommentContent;
     postContainer.append(singleCommentContainer)

@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 export function getAllPostsFromBacked() {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield fetch('http://localhost:8080/api/posts/get/all/posts');
-        const comments = yield response.json();
+        const posts = yield response.json();
+        return posts;
     });
 }
