@@ -1,4 +1,4 @@
-interface postInterface{
+export interface postI{
     id:number,
     title:string,
     content:string,
