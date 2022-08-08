@@ -1,4 +1,4 @@
-import { getAllPostsFromBacked } from "./src/ts/requests/asyncRequests.js";
+import { getAllPostsFromBacked } from "./requests/asyncRequests.js";
 console.log("Ts created");
 let posts;
 getAllPostsFromBacked().then(response => {
