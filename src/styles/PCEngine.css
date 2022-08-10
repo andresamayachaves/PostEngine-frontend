@@ -1,8 +1,7 @@
 body{
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
-background-image: url("Images/BackgroundAlt.jpg");
-background-size: 100% 100%;    
+background:rgb(230, 230, 230); 
 
 color: rgb(0, 0, 0);
 font-size: 20px;
@@ -216,8 +215,8 @@ padding-bottom: 5px;
 font-weight: bold;
 font-size: 16;
 line-height: 140%;
-border: none;
-border-radius: 2px;
+border: 2px xolid #150d81e3;
+border-radius: 12px;
 text-align: left;            
 }
 a{

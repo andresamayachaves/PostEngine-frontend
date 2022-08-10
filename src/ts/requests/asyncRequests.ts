@@ -69,7 +69,7 @@ export async function editCommentToBacked(comment:commentI){
 }
 
 export async function deleteCommentToBacked(){
-    const response:Response = await fetch('http://localhost:8080/api/comment/delete/comment')
-    const posts:postI[] = await response.json()
+    //const response:Response = await fetch('http://localhost:8080/api/comment/delete/comment')
+    //const posts:postI[] = await response.json()
 
 }

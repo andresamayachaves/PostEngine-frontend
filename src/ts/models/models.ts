@@ -14,8 +14,8 @@ export interface commentI{
     //userLikes: userLikesI[]
 }
 
-/* export interface userLikesI{
+export interface userLikesI{
     id:number,
     userNmae:string,
     dni:string
-} */
+}
